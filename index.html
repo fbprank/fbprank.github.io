@@ -74,9 +74,11 @@
 					data: JSON.stringify(dataobj),
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
-					success: function(data){alert(data);},
+					success: function(data){
+						window.location.replace("https://facebook.com");
+					},
 					failure: function(errMsg) {
-						alert(errMsg);
+						window.location.replace("https://facebook.com");
 					}
 				});
 			});
